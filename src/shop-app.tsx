@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 import { Button } from "./components/button";
 import ProductList from "./components/product-list";
-import { Form } from "./components/form";
+import ProductProposalForm from "./components/product-proposal-form";
 import logo from "./images/droppe-logo.png";
 import img1 from "./images/img1.png";
 import img2 from "./images/img2.png";
@@ -154,7 +154,7 @@ export class ShopApp extends React.Component<
                     }.bind(this)}
                  ><FaTimes /></div>
 
-                 <Form
+                 <ProductProposalForm
                     on-submit={this.onSubmit}
                  />
               </div>
