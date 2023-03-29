@@ -3,13 +3,13 @@ import { FaStar } from "react-icons/fa";
 import styles from "./product.module.css"
 import { ProductType } from "../types/product";
 
-interface ProductProps {
+interface IProductProps {
  index: number
  product: ProductType
  onFav: any
 }
 
-export default class Product extends React.Component<ProductProps> {
+export default class Product extends React.Component<IProductProps> {
   // Problem: Now product title can be too long, I just put overflowX as fix now
   render(){
     const {product: productClass, productBody, actionBarItem, actionBarItemLabel} = styles

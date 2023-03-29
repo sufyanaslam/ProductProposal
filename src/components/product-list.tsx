@@ -1,12 +1,12 @@
 import * as React from "react";
 import lodash from 'lodash'
 import Product from "./product";
-interface IPostsProps {
+interface IProductListProps {
   products: any;
   onFav: (title: string) => void;
 }
 
-export default class ProductList extends React.Component<IPostsProps, {}> {
+export default class ProductList extends React.Component<IProductListProps, {}> {
   render(){
     let productsarr = []
       for (const [i, p] of this.props.products.entries()) {
