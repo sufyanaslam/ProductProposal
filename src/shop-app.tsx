@@ -40,7 +40,9 @@ export class ShopApp extends React.Component<
       this.setState({
         prodCount: productList.length
       })
-    } catch (error) {}
+    } catch (error) {
+      console.log("Failed to fetch")
+    }
   }
 
   favClick(title: string) {
@@ -84,7 +86,9 @@ export class ShopApp extends React.Component<
           prodCount: lodash.size(this.state.products) + 1
         })
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log("Failed to update")
+    }
 
     this.setState({
       isOpen: false,
