@@ -10,9 +10,6 @@ interface ProductProps {
 }
 
 export default class Product extends React.Component<ProductProps> {
-  
-  constructor(props: any) { super(props) }
-
   // Problem: Now product title can be too long, I just put overflowX as fix now
   render(){
     const {product: productClass, productBody, actionBarItem, actionBarItemLabel} = styles
