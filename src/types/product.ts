@@ -4,13 +4,13 @@ type RatingType = {
 }
 
 export type ProductType = {
-  id: number
+  id?: number
   title: string
-  isFavorite: boolean
-  category: string
+  isFavorite?: boolean
+  category?: string
   description: string
-  image: string
+  image?: string
   price: number
-  rating: RatingType
+  rating?: RatingType
 }
 

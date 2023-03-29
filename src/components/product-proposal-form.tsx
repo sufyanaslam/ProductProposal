@@ -1,9 +1,10 @@
 import * as React from "react";
+import { ProductType } from "../types/product";
 import Button from "./button";
 import styles from "./product-proposal-form.module.css";
 
 type IFormProps = {
-  "on-submit": (payload: { title: string; description: string; price: string }) => void;
+  "on-submit": (payload: ProductType) => void;
 }
 
 const ProductProposalForm: React.FC<IFormProps> = (props) => {
@@ -27,6 +28,12 @@ const ProductProposalForm: React.FC<IFormProps> = (props) => {
       return;
     }
 
+    if (typeof priceRef.current?.value !== 'number') {
+      alert("Your product price needs to be a number");
+      
+      return;
+    }
+  
     props["on-submit"]({
       title: titleRef.current && titleRef.current.value,
       description: descriptionRef.current && descriptionRef.current.value,
@@ -53,6 +60,7 @@ const ProductProposalForm: React.FC<IFormProps> = (props) => {
         ref={priceRef}
         placeholder="Price..."
         defaultValue=""
+        type="number"
         className={styles.input}
       />
 

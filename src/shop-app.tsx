@@ -10,6 +10,7 @@ import img1 from "./images/img1.png";
 import img2 from "./images/img2.png";
 import styles from "./shopApp.module.css";
 import { fetchProducts, updateProduct } from "./services/api";
+import { ProductType } from "./types/product";
 
 export class ShopApp extends React.Component<
   {},
@@ -62,7 +63,7 @@ export class ShopApp extends React.Component<
     this.setState(() => ({ products: prods, numFavorites: totalFavs }));
   }
 
-  async onSubmit(payload: {title: string; description: string; price: string}) {
+  async onSubmit(payload: ProductType) {
     //updated the flow for product update, state should only update if the product is actually updated, removed timeout from message
     this.setState({
       isShowingMessage: true,
