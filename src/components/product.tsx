@@ -15,14 +15,14 @@ export default class Product extends React.Component<IProductProps> {
     const {product: productClass, productBody, actionBarItem, actionBarItemLabel} = styles
     
     return (
-      <span className={productClass} style={{display: 'inline-block', overflowX: 'scroll', float: 'none', clear: 'both'}}>
-        <span className={styles['product-title']} style={{overflowX: 'hidden'}}>{this.props.product.title}</span>
+      <span data-testid='product' className={productClass} style={{display: 'inline-block', overflowX: 'scroll', float: 'none', clear: 'both'}}>
+        <span data-testid='title' className={styles['product-title']} style={{overflowX: 'hidden'}}>{this.props.product.title}</span>
 
-        <p><strong>Rating: {this.props.product.rating ? `${this.props.product.rating.rate}/5` : ''}</strong></p>
+        <p data-testid='rating'><strong>Rating: {this.props.product.rating ? `${this.props.product.rating.rate}/5` : ''}</strong></p>
 
-        <p><b>Price: ${+this.props.product.price}</b></p>
+        <p data-testid="price"><b>Price: ${+this.props.product.price}</b></p>
 
-        <p className={productBody}>
+        <p data-testid="descripton" className={productBody}>
           <span><b>Description:</b></span>
           <br/>
           {this.props.product.description}
